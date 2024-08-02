@@ -7,10 +7,10 @@ if (isset($_SESSION["adm"])) {
     exit(); // Stop further execution
 }
 
-// if (!isset($_SESSION["user"]) && !isset($_SESSION["adm"])) {
-//     header("Location: login.php");
-//     exit(); // Stop further execution
-// }
+if (!isset($_SESSION["user"]) && !isset($_SESSION["adm"])) {
+    header("Location: login.php");
+    exit(); // Stop further execution
+}
 if (isset($_SESSION["user"])) {
     // Check if the logged-in user is banned
     $banCheckQuery = "SELECT COUNT(*) as isBanned FROM banlist WHERE fk_users = ? AND expiration_time > NOW()";

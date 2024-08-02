@@ -39,7 +39,7 @@ if (isset($_POST['sendMail'])) {
     }
 
     if(!$error){
-        $to = "finalteam66@gmail.com";
+        $to = "htaulant0@gmail.com";
         $message = "<p><strong>Name:</strong> $form_name</p>
         <p><strong>Phone:</strong> $form_phone</p>
         <p><strong>Email:</strong> $form_email</p>
@@ -59,9 +59,12 @@ if (isset($_POST['sendMail'])) {
               });
           </script>";
           echo $success_script;
+          
+
         };
 
     }
+    header("Location: contact.php");
  
 }
 ?>

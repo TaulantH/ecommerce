@@ -97,6 +97,9 @@ if (isset($_POST["login"])) {
     <title><?= include_once "brand.php"; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <style>
+        .container{
+        padding: auto;
+        }
         .background{
             background-color: #252422;
             
@@ -111,19 +114,28 @@ if (isset($_POST["login"])) {
             background-color: #EB5E28;
             border: none;
         }
+        .mb-md-5{
+            margin-bottom: 0;
+        }
+        .card-body{
+            height: 600px;
+        }
     </style>
 </head>
 
 <body>
     <section class="vh-100 gradient-custom">
-        <div class="container py-1 h-100">
+        <div class="container">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card background text-black" style="border-radius: 1rem;">
-                        <div class="card-body p-2 text-center" style="height: 500px;">
+                        <div class="card-body p-2 text-center">
 
                             <div class="mb-md-5 mt-md-4 pb-5">
                                 <form method="post">
+                                <div class="alert alert-info">
+                                        This website is for testing purposes.
+                                    </div>
                                     <h2 class="fw-bold mb-2 text-uppercase text-white color">Login</h2>
                                     <p class="text-white-50 mb-5">Please enter your login and password!</p>
                                     <span class="text-danger"><?= $banError ?></span>

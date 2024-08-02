@@ -50,6 +50,7 @@ if (isset($_POST["reset_request"])) {
         } else {
             // User's email is null (should not happen)
             $error = "User's email is missing in the database.";
+
         }
     } else {
         // User not found in the database

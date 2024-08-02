@@ -1,5 +1,16 @@
 {
-  "dependencies": {
-    "firebase": "^10.3.0"
-  }
+    "name": "github_test",
+    "version": "1.0.0",
+    "description": "A web application built with HTML, CSS, JavaScript, and PHP",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "dependencies": {
+        "firebase": "^10.3.0"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0"
+    }
 }

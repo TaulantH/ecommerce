@@ -39,13 +39,20 @@
         .textColor{
             color: #FFFCF2
         }
+        label.logo{
+            color: #FFFCF2;
+            font-size: 35px;
+            line-height:80px;
+            padding: 0 100px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand textColor" href="dashboard.php">StyleSpot:</a>
+  <label class="logo">StyleSpot</label>
     <button class="navbar-toggler" style="border:1px solid #FFFCF2; background-color: #FFFCF2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon" style="background-color: #FFFCF2"></span>
     </button>

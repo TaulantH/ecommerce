@@ -102,9 +102,9 @@ if ($canSubmitReview && !isset($_SESSION['review_submitted'])) {
             </select>
             <br>
             <label for='comment'>Comment:</label>
-            <textarea name='comment' id='comment' rows='4' cols='50'></textarea>
+            <textarea name='comment' id='comment' rows='4' cols='40'></textarea>
             <br>
-            <button type='submit'>Submit Review</button>
+            <button type='submit' class='btn btn-primary'>Submit Review</button>
         </form>
     ";
 } else {
@@ -234,6 +234,7 @@ if ($_SESSION['user']) {
             border: 1px solid #CCC5B9;
             min-width: 301px;
         }
+        
 </style>
 </head>
 
@@ -275,7 +276,7 @@ if ($_SESSION['user']) {
                                     <span class="fs-5 ps-1">Rating: <?= $review['rating'] ?> <i class="fa-solid fa-star" style="color: #EB5E28;"></i> </span>
                                 </div>
                                 <div>
-                                    <span class="ps-1">Comment: <?= $review['comment'] ?></span>
+                                    <span lass="fs-5 ps-1">Comment: <?= $review['comment'] ?></span>
                                 </div>
                             </div>
                         <?php endforeach; ?>

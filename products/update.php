@@ -202,10 +202,10 @@
             </select>
             <span class="text-danger"><?= $categoryError ?></span>
         </div>
-        <div class="form-group">
+        <div class="form-group" >
             <label for="picture">Image</label>
             <br>
-            <img src='../pictures/<?=$row['picture']?>' alt="<?= $name ?>" class="img-thumbnail">
+            <img src='../pictures/<?=$row['picture']?>' alt="<?= $name ?>"  class="img-thumbnail">
             <input type="file" class="form-control" id="picture" name="picture">
         </div>
         <div class="mb-3 form-check">

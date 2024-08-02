@@ -52,17 +52,18 @@
            }else{
                 $price = "<p class='card-text'><b>Price: {$row['price']}€</b></p>";
            }
-            $content .= "<div class='card p-0 shadow' style='width: 18rem;'>
-                            <img src='../pictures/{$row['picture']}' class='card-img-top' alt={$row['productName']}>
+            $content .= "<div class='col'>
+                            <div class='card p-2 shadow' style='width: 310px; height: 100%; padding: 1px; margin: 0 auto;'>
+                            <img src='../pictures/{$row['picture']}' class='card-img-top' style='width: 100%; height: 300px; object-fit: cover;' alt={$row['productName']}>
                             <div class='card-body'>
                                 <h5 class='card-title text-center'>{$row['productName']}</h5>
                                 {$price}
                                 <p class='card-text'>{$row['category']}</p>
-                                
                                 <a href='details.php?id={$row['ID']}' class='btn btn-success'>Show details</a>
                                 <a href='update.php?id={$row['ID']}' class='btn btn-warning'>Edit</a>
                                 <a href='delete.php?id={$row['ID']}' class='btn btn-danger'>Delete</a>
                             </div>
+                        </div>
                         </div>";
         }
     }
@@ -172,12 +173,14 @@
         <button type="submit" class="btn btn-secondary" name="showAll">Show all Products</button>
         </div>
     </form>
-    <div class="container ps-5">
-        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-sm-1 gap-3">
+    <div class="container text-center">
+    <div class="row g-2 g-lg-3">    
         <?= $content ?>
         </div>
     </div>
     </div>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'
+        integrity='sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz' crossorigin='anonymous'></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

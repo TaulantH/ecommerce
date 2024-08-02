@@ -108,7 +108,7 @@
     <table class="table">
         <thead>
             <tr>
-            <th scope="col">#</th>
+            <th scope="col">id</th>
             <th scope="col">name</th>
             <th scope="col">price</th>
             <th scope="col">details</th>

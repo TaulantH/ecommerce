@@ -214,7 +214,7 @@ mysqli_close($connect);
 </div>
         </form>
         <div class="box" style="margin: 20px;">
-
+        <div class="table-responsive">
     <table class="table">
     <thead>
     <tr>
@@ -276,6 +276,7 @@ mysqli_close($connect);
         ?>
         </tbody>
     </table>
+        </div>
         </div>
         
         <a href="../products/home.php" class="btn btn-secondary">Back to Products</a>

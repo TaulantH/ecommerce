@@ -94,9 +94,12 @@ if (isset($_POST["sign-up"])) {
     if (empty($password)) {
         $error = true;
         $passError = "Password can't be empty!";
-    } elseif (strlen($password) < 6) {
+    } elseif (strlen($password) < 8) {
         $error = true;
-        $passError = "Password must have at least 6 characters.";
+        $passError = "Password must have at least 8 characters.";
+    } elseif (!preg_match('/^(?=.*[A-Z])(?=.*[a-z])(?=.*\W).*$/', $password)) {
+        $error = true;
+        $passError = "Password must include at least one uppercase letter, one lowercase letter, and one special character.";
     }
 
     $confirm_password = $_POST["confirm_password"];
@@ -115,17 +118,16 @@ if (isset($_POST["sign-up"])) {
 
 
 
-if (mysqli_query($connect, $sql)) {
-    echo "<div class='alert alert-success'>
+        if (mysqli_query($connect, $sql)) {
+            echo "<div class='alert alert-success'>
               <p>New account has been created</p>
           </div>";
-          header("refresh: 2; url=login.php");
-} else {
-    echo "<div class='alert alert-danger'>
+            header("refresh: 2; url=login.php");
+        } else {
+            echo "<div class='alert alert-danger'>
               <p>Error: Something wrong!!!</p>
           </div>";
-}
-
+        }
     }
 }
 ?>
@@ -140,21 +142,24 @@ if (mysqli_query($connect, $sql)) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-   <style>
-    body{
-        background-color: #FFFCF2;
-    }
-    .registBg{
-        background-color: #252422;
-    }
-    .textColor{
-        color: #EB5E28 !important;
-    }
-    .createBtn{
-        background-color: #EB5E28;
-        border: none;
-    }
-</style>
+    <style>
+        body {
+            background-color: #FFFCF2;
+        }
+
+        .registBg {
+            background-color: #252422;
+        }
+
+        .textColor {
+            color: #EB5E28 !important;
+        }
+
+        .createBtn {
+            background-color: #EB5E28;
+            border: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -167,7 +172,7 @@ if (mysqli_query($connect, $sql)) {
         <div class="container py-0">
             <div class="row justify-content-center align-items-center h-100">
                 <div class="col-12 col-lg-9 col-xl-7">
-                <div class="card registBg text-white" style="border-radius: 1rem;">
+                    <div class="card registBg text-white" style="border-radius: 1rem;">
                         <div class="card-body p-2 text-center" style="height: 100%;">
                             <h3 class="mb-0 pb-2 pb-md-0 mb-md-2 textColor">Registration</h3>
                             <form method="post" autocomplete="off" enctype="multipart/form-data">
@@ -224,10 +229,10 @@ if (mysqli_query($connect, $sql)) {
 
                                     </div>
                                     <div class="form-outline">
-                                            <label for="username" class="form-label">Username</label>
-                                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= $username ?>">
-   
-</div>
+                                        <label for="username" class="form-label">Username</label>
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= $username ?>">
+
+                                    </div>
                                     <div class="row">
                                         <div class="col-md-6 mb-4 pb-2">
 
@@ -248,37 +253,37 @@ if (mysqli_query($connect, $sql)) {
 
                                         </div>
                                     </div>
-                              <!-- Add this button next to the password input field -->
-<!-- Password Input Field -->
-<!-- Password Input Field -->
-<div class="col-md-6 mb-4 pb-2">
-    <div class="form-outline">
-        <label for="password" class="form-label">Password</label>
-        <div class="input-group">
-            <input type="password" class="form-control" id="password" name="password">
-            <span class="text-danger"><?= $passError ?></span>
-            <!-- Show/Hide Password Button for Password -->
-            <button type="button" id="togglePassword" class="btn btn-light btn-sm" onclick="togglePasswordVisibility('password')">
-                <i class="fas fa-eye"></i>
-            </button>
-        </div>
-    </div>
-</div>
+                                    <!-- Add this button next to the password input field -->
+                                    <!-- Password Input Field -->
+                                    <!-- Password Input Field -->
+                                    <div class="col-md-6 mb-4 pb-2">
+                                        <div class="form-outline">
+                                            <label for="password" class="form-label">Password</label>
+                                            <div class="input-group">
+                                                <input type="password" class="form-control" id="password" name="password">
+                                                <span class="text-danger"><?= $passError ?></span>
+                                                <!-- Show/Hide Password Button for Password -->
+                                                <button type="button" id="togglePassword" class="btn btn-light btn-sm" onclick="togglePasswordVisibility('password')">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
 
-<!-- Confirm Password Input Field -->
-<div class="col-md-6 mb-4 pb-2">
-    <div class="form-outline">
-        <label for="confirm_password" class="form-label">Confirm Password</label>
-        <div class="input-group">
-            <input type="password" class="form-control" id="confirm_password" name="confirm_password">
-            <span class="text-danger"><?= $confirmPassError ?></span>
-            <!-- Show/Hide Password Button for Confirm Password -->
-            <button type="button" id="toggleConfirmPassword" class="btn btn-light btn-sm" onclick="togglePasswordVisibility('confirm_password')">
-                <i class="fas fa-eye"></i>
-            </button>
-        </div>
-    </div>
-</div>
+                                    <!-- Confirm Password Input Field -->
+                                    <div class="col-md-6 mb-4 pb-2">
+                                        <div class="form-outline">
+                                            <label for="confirm_password" class="form-label">Confirm Password</label>
+                                            <div class="input-group">
+                                                <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+                                                <span class="text-danger"><?= $confirmPassError ?></span>
+                                                <!-- Show/Hide Password Button for Confirm Password -->
+                                                <button type="button" id="toggleConfirmPassword" class="btn btn-light btn-sm" onclick="togglePasswordVisibility('confirm_password')">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="row">
                                         <div class="col-12">
@@ -304,19 +309,19 @@ if (mysqli_query($connect, $sql)) {
     </section>
 
     <script>
-function togglePasswordVisibility(inputId) {
-    var passwordField = document.getElementById(inputId);
-    var toggleButton = document.getElementById("toggle" + inputId);
+        function togglePasswordVisibility(inputId) {
+            var passwordField = document.getElementById(inputId);
+            var toggleButton = document.getElementById("toggle" + inputId);
 
-    if (passwordField.type === "password") {
-        passwordField.type = "text";
-        toggleButton.textContent = "Hide Password";
-    } else {
-        passwordField.type = "password";
-        toggleButton.textContent = "Show Password";
-    }
-}
-</script>
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleButton.textContent = "Hide Password";
+            } else {
+                passwordField.type = "password";
+                toggleButton.textContent = "Show Password";
+            }
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>

@@ -67,7 +67,6 @@
         nav ul li a {
             color: #FFFCF2;
             font-size: 17px;
-            text-transform: uppercase;
         }
 
         a:hover{
@@ -117,6 +116,7 @@
                 text-align: center;
                 transition: all .5s;
                 z-index: 10;
+                text-decoration: none;
             }
             nav ul li{
                 display: block;
@@ -160,6 +160,8 @@
             <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/product.php">Products</a></li>
             <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/about.php">About</a></li>
             <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/contact.php">Contact</a></li>
+            <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/messages.php">Message</a></li>
+
             <?= $account ?>
             
             <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/shopping/shoppingcart.php"><i class="fa-solid fa-cart-shopping"></i></a></li>

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require_once "../db_connect.php"; // Include your database connection code
 
@@ -191,7 +192,7 @@ if (mysqli_stmt_execute($stmt)) {
     $error = "An error occurred during the purchase process.";
 }
 }
-
+ob_end_flush(); // Flush the output buffer
 ?>
 
 <!DOCTYPE html>

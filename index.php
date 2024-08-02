@@ -142,7 +142,8 @@ if (mysqli_num_rows($resultProducts) > 0) {
 
     <?php include_once "components/hero.php"
     ?>
-    
+    <?php include_once "components/chat.php"
+    ?>
     <h2 class='text-center mt-5' style='font-family: Georgia, Times, serif'>Summer Sale up to -25%</h2>
     <div class="searchDiv">
     <form action="" method="GET" class="search-form row align-items-center">
