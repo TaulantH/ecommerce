@@ -25,7 +25,7 @@ if (isset($_SESSION["user"])) {
         if ($banCheckRow['isBanned'] > 0) {
             // The user is banned, log them out and redirect
             session_destroy();
-            $url = '//' . $_SERVER['HTTP_HOST'] . '/login.php';
+            $url = '//' . $_SERVER['HTTP_HOST'] . '/ecommerce/login.php';
             header("Location: $url");
             exit();
         }

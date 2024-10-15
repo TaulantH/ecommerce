@@ -5,6 +5,7 @@
     if(isset($_SESSION['user'])){
         header("Location: ../login.php");
     }
+    
     if(!isset($_SESSION['user']) && !isset($_SESSION['adm'])){
         header("Location: ../login.php");
     }
@@ -63,19 +64,19 @@
           <a class="nav-link textColor" href="../dashboard.php">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link textColor" href="//<?php echo $_SERVER['HTTP_HOST'];?>/products/home.php">Go to Products</a>
+          <a class="nav-link textColor" href="//<?php echo $_SERVER['HTTP_HOST'];?>/ecommerce/products/home.php">Go to Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link textColor" href="//<?php echo $_SERVER['HTTP_HOST'];?>/discounts/index.php">Go to discounts</a>
+          <a class="nav-link textColor" href="//<?php echo $_SERVER['HTTP_HOST'];?>/ecommerce/discounts/index.php">Go to discounts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link textColor" href="//<?php echo $_SERVER['HTTP_HOST'];?>/users/index.php">Manage Users</a>
+          <a class="nav-link textColor" href="//<?php echo $_SERVER['HTTP_HOST'];?>/ecommerce/users/index.php">Manage Users</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link textColor" href="//<?php echo $_SERVER['HTTP_HOST'];?>/products/sales_statistics.php">Sales statistics</a>
+          <a class="nav-link textColor" href="//<?php echo $_SERVER['HTTP_HOST'];?>/ecommerce/products/sales_statistics.php">Sales statistics</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link textColor" href="//<?php echo $_SERVER['HTTP_HOST'];?>/logout.php?logout">Logout</a>
+          <a class="nav-link textColor" href="//<?php echo $_SERVER['HTTP_HOST'];?>/ecommerce/logout.php?logout">Logout</a>
         </li>
       </ul>
     </div>

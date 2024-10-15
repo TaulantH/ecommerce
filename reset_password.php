@@ -29,7 +29,7 @@ if (isset($_POST["reset_request"])) {
             mysqli_query($connect, $insertTokenQuery);
 
             // Send an email with a link to reset the password
-            $resetLink = "https://taladeveloper.com/reset_pasword_form.php?token=$token";
+            $resetLink = "http://localhost/ecommerce/reset_pasword_form.php?token=$token";
             $subject = "Password Reset, you have one hour to reset!"; // Initialize the subject variable
             $message = "Click the link below to reset your password:\n\n$resetLink"; // Initialize the message variable
 

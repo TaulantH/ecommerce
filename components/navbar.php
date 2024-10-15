@@ -1,24 +1,24 @@
 <?php
     if(isset($_SESSION['user']) || isset($_SESSION['adm'])){
-        $log = "<a href='//{$_SERVER['HTTP_HOST']}/logout.php?logout'>Logout</a>";
+        $log = "<a href='//{$_SERVER['HTTP_HOST']}/ecommerce/logout.php?logout'>Logout</a>";
         if(isset($_SESSION['user'])){
-            $account = "<li><a href='//{$_SERVER['HTTP_HOST']}/account.php?id={$_SESSION['user']}'>Account</a></li>";
+            $account = "<li><a href='//{$_SERVER['HTTP_HOST']}/ecommerce/account.php?id={$_SESSION['user']}'>Account</a></li>";
         }else{
-            $account = "<li><a href='//{$_SERVER['HTTP_HOST']}/account.php?id={$_SESSION['adm']}'>Account</a></li>";
+            $account = "<li><a href='//{$_SERVER['HTTP_HOST']}/ecommerce/account.php?id={$_SESSION['adm']}'>Account</a></li>";
         }
         
 
     }else{
-        $log = "<a href='//{$_SERVER['HTTP_HOST']}/login.php'>Log in</a>";
+        $log = "<a href='//{$_SERVER['HTTP_HOST']}/ecommerce/login.php'>Log in</a>";
         $account = "";
     }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Navbar</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -156,15 +156,15 @@
         </label>
         <label class="logo">StyleSpot</label>
         <ul>
-            <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/index.php">Home</a></li>
-            <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/product.php">Products</a></li>
-            <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/about.php">About</a></li>
-            <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/contact.php">Contact</a></li>
-            <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/messages.php">Message</a></li>
+            <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/ecommerce/index.php">Home</a></li>
+            <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/ecommerce/product.php">Products</a></li>
+            <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/ecommerce/about.php">About</a></li>
+            <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/ecommerce/contact.php">Contact</a></li>
+            <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/ecommerce/messages.php">Message</a></li>
 
             <?= $account ?>
             
-            <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/shopping/shoppingcart.php"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a href="//<?php echo $_SERVER['HTTP_HOST'];?>/ecommerce/shopping/shoppingcart.php"><i class="fa-solid fa-cart-shopping"></i></a></li>
             <li><?= $log ?> </li>
         </ul>
     </nav>
